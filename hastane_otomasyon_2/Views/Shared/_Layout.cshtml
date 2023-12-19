@@ -9,28 +9,24 @@
     <link rel="stylesheet" href="~/hastane_otomasyon_2.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">hastane_otomasyon_2</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <div class="container">
+        <header>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <img src="~/images/hospitalogo.jpg" alt="Hastane Logo" class="img-fluid" style="max-height: 100px;" />
+                    <h2 class="mt-2">Özel Sakarya Hastanesi</h2>
+                </div>
+                <div class="col-6 text-right">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Account" asp-action="Login">Giriş</a>
+                    <a class="btn btn-success ml-2" asp-area="" asp-controller="Account" asp-action="Register">Üye Ol</a>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
+
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <!-- Navbardaki diğer kodlar burada -->
+            </nav>
+        </header>
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -41,6 +37,7 @@
             &copy; 2023 - hastane_otomasyon_2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
