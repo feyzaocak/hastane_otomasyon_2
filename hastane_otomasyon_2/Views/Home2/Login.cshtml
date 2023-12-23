@@ -1,0 +1,30 @@
+﻿@model hastane_otomasyon_2.Models.Person
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+</head>
+<body>
+    <form asp-controller="Home2" asp-action="Login" method="post">
+        <h2>Login</h2>
+        <br />
+        <input type="email" asp-for="Email" />
+        <br />
+        <input type="password" asp-for="Password" />
+        <label>
+            <input type="checkbox" asp-for="Oturum" />
+            Oturum açık tut
+        </label>
+        <button type="submit">Login</button>
+        @if (ViewBag.Message != null)
+        {
+            <br />
+            <label>@ViewBag.Message</label>
+        }
+    </form>
+</body>
+</html>
