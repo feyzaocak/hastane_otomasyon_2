@@ -16,3 +16,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+nav {
+    font-size: 18px;
+    text-align: left; 
+}
+
+    
+    nav a {
+        font-size: 18px;
+        margin-right: 15px; 
+    }

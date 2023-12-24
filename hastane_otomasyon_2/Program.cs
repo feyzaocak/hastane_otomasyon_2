@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+ï»¿using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication(); // UseAuthentication() sadece bir kez çaðrýlmalý
+app.UseAuthentication(); // UseAuthentication() sadece bir kez ï¿½aï¿½rï¿½lmalï¿½
 app.UseAuthorization();
 
 app.MapControllerRoute(
