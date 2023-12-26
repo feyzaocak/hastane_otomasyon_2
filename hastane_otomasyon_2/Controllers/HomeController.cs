@@ -11,6 +11,21 @@ namespace hastane_otomasyon_2.Controllers
         //yani sadece deneme@gmail.com burdaki sayfaları görebilecek.
     public class HomeController : Controller
     {
+        public IActionResult RandevuAl()
+        {
+            // Tıbbi birimleri ve doktorları model üzerinden view'e gönder
+            var model = new RandevuModel();
+            // Tıbbi birimleri ve doktorları model üzerinden view'e gönder
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult RandevuAl(RandevuModel randevu)
+        {
+            // Randevu bilgilerini işle (veritabanına kaydet vb.)
+            // Başarıyla işlendikten sonra bir yönlendirme yapabilirsin
+            return RedirectToAction("Index", "Home");
+        }
 
         private readonly ILogger<HomeController> _logger;
 

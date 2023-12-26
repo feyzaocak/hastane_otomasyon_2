@@ -1,0 +1,29 @@
+﻿<!-- RandevuAl.cshtml -->
+@model RandevuModel
+
+<form method="post" asp-action="RandevuAl">
+    <div class="form-group">
+        <label>Tıbbi Birim</label>
+        <select asp-for="TıbbiBirim" class="form-control">
+            <!-- Tıbbi birimleri doldur, örneğin sabit bir liste veya veritabanından çek -->
+            <option value="Birim1">Birim 1</option>
+            <option value="Birim2">Birim 2</option>
+            <!-- Diğer tıbbi birimleri ekleyebilirsin -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Doktor</label>
+        <select asp-for="Doktor" class="form-control">
+            <!-- Doktorları, seçilen tıbbi birime göre doldur -->
+            <option value="Doktor1">Doktor 1</option>
+            <option value="Doktor2">Doktor 2</option>
+            <!-- Diğer doktorları ekleyebilirsin -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Tarih</label>
+        <input type="datetime-local" asp-for="Tarih" class="form-control" />
+    </div>
+    <!-- Diğer gerekli alanları ekleyebilirsin -->
+    <button type="submit" class="btn btn-primary">Randevu Al</button>
+</form>
