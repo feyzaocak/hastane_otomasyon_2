@@ -1,0 +1,30 @@
+﻿@model hastane_otomasyon_2.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Üye Ol</title>
+</head>
+<body>
+    <form asp-controller="Account" asp-action="Register" method="post">
+        <h2>Üye Ol</h2>
+        <label>Ad:</label>
+        <input type="text" asp-for="FirstName" required />
+
+        <label>Soyad:</label>
+        <input type="text" asp-for="LastName" required />
+
+        <label>E-posta:</label>
+        <input type="email" asp-for="Email" required />
+
+        <label>Şifre:</label>
+        <input type="password" asp-for="Password" required />
+
+        <button type="submit">Üye Ol</button>
+    </form>
+</body>
+</html>

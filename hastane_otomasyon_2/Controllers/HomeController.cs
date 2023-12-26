@@ -39,6 +39,7 @@ namespace hastane_otomasyon_2.Controllers
     }
         public IActionResult Index()
         {
+
             return View();
         }
 

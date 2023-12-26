@@ -22,36 +22,21 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication(); // UseAuthentication() sadece bir kez �a�r�lmal�
+app.UseAuthentication(); // UseAuthentication() sadece bir kez çağrılmalı
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "contact",
+    pattern: "contact",
+    defaults: new { controller = "Contact", action = "Index" });
+
+app.MapControllerRoute(
+    name: "tibbiBirimler",
+    pattern: "tibbi-birimler",
+    defaults: new { controller = "TibbiBirimler", action = "Index" });
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "contact",
-        pattern: "contact",
-        defaults: new { controller = "Contact", action = "Index" });
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
-});
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "tibbiBirimler",
-        pattern: "tibbi-birimler",
-        defaults: new { controller = "TibbiBirimler", action = "Index" });
-    
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
-});
-
-
 
 app.Run();

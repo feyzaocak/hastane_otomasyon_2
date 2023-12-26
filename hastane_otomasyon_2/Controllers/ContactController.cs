@@ -1,6 +1,7 @@
-﻿// ContactController.cs
+﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+[Authorize]
 public class ContactController : Controller
 {
     public IActionResult Index()
