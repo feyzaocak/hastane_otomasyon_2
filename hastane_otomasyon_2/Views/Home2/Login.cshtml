@@ -16,20 +16,29 @@
     <form asp-controller="Home2" asp-action="Login" method="post">
         <h2>Login</h2>
         <br />
-        <input type="email" asp-for="Email" />
-        <br />
-        <input type="password" asp-for="Password" />
-        <label>
-            <input type="checkbox" asp-for="Oturum" />
-            Oturum açık tut
-        </label>
-        <br/>
-        <button type="submit">Login</button>
-        @if (ViewBag.Message != null)
-        {
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" asp-for="Email" />
+            <div id="emailHelp" class="form-text">Mailini kimseyle paylaşmayacağız.</div>
             <br />
-            <label>@ViewBag.Message</label>
-        }
-    </form>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Şifre</label>
+            <input type="password" asp-for="Password" />
+        </div>
+            <div class="mb-3 form-check">
+                <label>
+                    <input type="checkbox" asp-for="Oturum" />
+                    Oturum açık tut
+                </label>
+                <br />
+            </div>
+                <button type="submit">Login</button>
+                @if (ViewBag.Message != null)
+                {
+                    <br />
+                    <label>@ViewBag.Message</label>
+                }
+</form>
 </body>
 </html>
