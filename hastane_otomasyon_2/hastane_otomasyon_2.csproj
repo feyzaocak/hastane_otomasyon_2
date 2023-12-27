@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     <PackageReference Include="SQLite.Net-PCL" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\efCore\" />
+    <None Remove="Data\Abstract\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\efCore\" />
+    <Folder Include="Data\Abstract\" />
   </ItemGroup>
 </Project>
