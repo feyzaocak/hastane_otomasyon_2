@@ -1,0 +1,26 @@
+﻿@model Kullanici
+
+
+<h2>Üye Ol</h2>
+<hr>
+<form asp-controller="Kullanici" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="KullaniciAdi" class="form-label"> Ad:</label>
+        <input asp-for="KullaniciAdi" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="KullaniciSoyadi" class="form-label">Soyadi:</label>
+        <input asp-for="KullaniciSoyadi" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="KullaniciEmail" class="form-label"> Email:</label>
+        <input asp-for="KullaniciEmail" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="KullaniciTelefon" class="form-label">Telefon:</label>
+        <input asp-for="KullaniciTelefon" class="form-control">
+    </div>
+    <button type="submit" class=" btn btn-primary">Kaydet</button>
+
+
+</form>

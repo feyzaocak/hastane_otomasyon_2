@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using hastane_otomasyon_2.Data.Entity;
 
 namespace hastane_otomasyon_2.Controllers
 {
@@ -14,13 +15,13 @@ namespace hastane_otomasyon_2.Controllers
         public IActionResult RandevuAl()
         {
             // Tıbbi birimleri ve doktorları model üzerinden view'e gönder
-            var model = new RandevuModel();
+            var model = new Randevu();
             // Tıbbi birimleri ve doktorları model üzerinden view'e gönder
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult RandevuAl(RandevuModel randevu)
+        public IActionResult RandevuAl(Randevu randevu)
         {
             // Randevu bilgilerini işle (veritabanına kaydet vb.)
             // Başarıyla işlendikten sonra bir yönlendirme yapabilirsin

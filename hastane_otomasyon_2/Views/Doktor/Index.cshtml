@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Doktor>
+
+<h2>Doktor Listesi</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 150px;">@Html.DisplayNameFor(m => m.DoktorId)</th>
+            <th>@Html.DisplayNameFor(m => m.DoktorAdi)</th>
+            <th>@Html.DisplayNameFor(m => m.DoktorSoyadi)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DoktorId)</td>
+                <td>@Html.DisplayFor(modelItem => item.DoktorAdi)</td>
+                <td>@Html.DisplayFor(modelItem => item.DoktorSoyadi)</td>
+                <td>
+                    <a href="" class="btn btn -sm btn-primary"> Details</a>
+                    <a href="" class="btn btn -sm btn-danger"> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

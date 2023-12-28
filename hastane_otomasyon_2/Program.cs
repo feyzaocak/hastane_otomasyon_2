@@ -2,13 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using hastane_otomasyon_2.Data.efCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<IdentityContext>(
-    options => options.UseSqlite(builder.Configuration["ConnectionStrings:SQLite_Connection"]));
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
+builder.Services.AddDbContext<HastaneContext>(
+    options => options.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
 
 builder.Services.AddControllersWithViews();

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Kullanici>
+
+<h2>Kullanici Listesi</h2>
+<hr >
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 150px;">@Html.DisplayNameFor(m => m.KullaniciId)</th>
+            <th>@Html.DisplayNameFor(m => m.KullaniciAdi)</th>
+            <th>@Html.DisplayNameFor(m => m.KullaniciSoyadi)</th>
+            <th>@Html.DisplayNameFor(m => m.KullaniciEmail)</th>
+            <th>@Html.DisplayNameFor(m => m.KullaniciTelefon)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciId)</td>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciAdi)</td>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciSoyadi)</td>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciEmail)</td>
+                <td>@Html.DisplayFor(modelItem => item.KullaniciTelefon)</td>
+                <td>
+                    <a asp-controller="Kullanici" asp-action="Edit" asp-route-id="@item.KullaniciId" class="btn btn -sm btn-primary"> Edit</a>
+                    <a href="" class="btn btn -sm btn-danger"> Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
