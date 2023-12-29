@@ -24,7 +24,7 @@
                 <td>@Html.DisplayFor(modelItem => item.KullaniciTelefon)</td>
                 <td>
                     <a asp-controller="Kullanici" asp-action="Edit" asp-route-id="@item.KullaniciId" class="btn btn -sm btn-primary"> Edit</a>
-                    <a href="" class="btn btn -sm btn-danger"> Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.KullaniciId" class="btn btn -sm btn-danger"> Delete</a> 
                 </td>
             </tr>
         }

@@ -36,15 +36,17 @@ namespace hastane_otomasyon_2.Controllers
 
         [HttpPost]
 
-        public async Task <IActionResult> Create(Kullanici model)
+        public async Task<IActionResult> Create(Kullanici model)
         {
             _context.Kullanicis.Add(model);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
-           
+
         }
 
-        public async Task<IActionResult> Edit( int? id)
+        [HttpGet]
+
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -53,13 +55,81 @@ namespace hastane_otomasyon_2.Controllers
             }
             var kull = await _context.Kullanicis.FindAsync(id);
 
-        if (kull==null)
+            if (kull == null)
             {
                 return NotFound();
             }
 
             return View(kull);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Edit(int id, Kullanici model)
+        {
+            if (id != model.KullaniciId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(model);
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception)
+                {
+                    if (!_context.Kullanicis.Any(o => o.KullaniciId == model.KullaniciId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+
+                }
+                return RedirectToAction("Index");
+
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+
+            }
+            var kullanici = await _context.Kullanicis.FindAsync(id);
+
+            if (kullanici == null)
+            {
+                return NotFound();
+            }
+
+            return View(kullanici);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete([FromForm] int id)
+        {
+            var kullanici = await _context.Kullanicis.FindAsync(id);
+            if(kullanici ==null)
+            {
+                return NotFound();
+            }
+            _context.Kullanicis.Remove(kullanici);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
     }
 }
 

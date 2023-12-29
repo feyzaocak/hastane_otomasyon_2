@@ -22,17 +22,17 @@ namespace hastane_otomasyon_2.Controllers
         }
 
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Index()
         {
             var doktors = await _context.Doktors.ToListAsync();
             return View(doktors);
         }
 
-
-        public IActionResult Create()
-        {
-            return View();
-        }
 
         [HttpPost]
 

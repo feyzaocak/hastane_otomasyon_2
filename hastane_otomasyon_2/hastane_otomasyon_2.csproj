@@ -21,12 +21,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Data\efCore\" />
-    <None Remove="Data\Entity\" />
     <None Remove="Views\Kullanici\" />
+    <None Remove="Data\Entity\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\efCore\" />
-    <Folder Include="Data\Entity\" />
     <Folder Include="Views\Kullanici\" />
+    <Folder Include="Data\Entity\" />
   </ItemGroup>
 </Project>
