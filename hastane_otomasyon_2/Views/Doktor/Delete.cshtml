@@ -1,0 +1,10 @@
+﻿@model Doktor
+
+<p>
+    <b> @Model.DoktorAdi @Model.DoktorSoyadi  </b> isimli Doktoru silmek istiyor musun?
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.DoktorId">
+        <button type="submit" class=" btn btn-danger"> Evet</button>
+        <a asp-action="Index" class="btn btn-primary">Hayır</a>
+    </form>
+</p>
