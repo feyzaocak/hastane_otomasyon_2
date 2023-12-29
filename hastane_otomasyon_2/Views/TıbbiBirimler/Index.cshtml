@@ -1,0 +1,25 @@
+﻿@model List<hastane_otomasyon_2.Models.TibbiBirimModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tıbbi Birimler</title>
+</head>
+<body>
+    <h2>Tıbbi Birimler</h2>
+
+    <ul>
+        @foreach (var birim in Model)
+        {
+            <li>
+                <strong>@birim.BirimAdi</strong><br />
+                @birim.Aciklama
+            </li>
+        }
+    </ul>
+</body>
+</html>
