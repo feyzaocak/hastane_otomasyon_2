@@ -7,7 +7,6 @@ using hastane_otomasyon_2.Data.Entity;
 using hastane_otomasyon_2.Data.efCore;
 using Microsoft.EntityFrameworkCore;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace hastane_otomasyon_2.Controllers
 {
@@ -21,18 +20,17 @@ namespace hastane_otomasyon_2.Controllers
             _context = context;
         }
 
-
-        public IActionResult Create()
-        {
-            return View();
-        }
-
+       
         public async Task<IActionResult> Index()
         {
             var doktors = await _context.Doktors.ToListAsync();
             return View(doktors);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
 
@@ -42,6 +40,89 @@ namespace hastane_otomasyon_2.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
 
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+
+            }
+            var doc = await _context.Doktors.FindAsync(id);
+
+            if (doc == null)
+            {
+                return NotFound();
+            }
+
+            return View(doc);
+        }
+
+        public async Task<IActionResult> Edit(int id, Doktor model)
+        {
+            if (id != model.DoktorId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(model);
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception)
+                {
+                    if (!_context.Doktors.Any(o => o.DoktorId == model.DoktorId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+
+                }
+                return RedirectToAction("Index");
+
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+
+            }
+            var doktor = await _context.Doktors.FindAsync(id);
+
+            if (doktor == null)
+            {
+                return NotFound();
+            }
+
+            return View(doktor);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete([FromForm] int id)
+        {
+            var doktor = await _context.Doktors.FindAsync(id);
+            if (doktor == null)
+            {
+                return NotFound();
+            }
+            _context.Doktors.Remove(doktor);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }

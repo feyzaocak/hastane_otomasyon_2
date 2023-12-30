@@ -19,8 +19,8 @@
                 <td>@Html.DisplayFor(modelItem => item.DoktorAdi)</td>
                 <td>@Html.DisplayFor(modelItem => item.DoktorSoyadi)</td>
                 <td>
-                    <a href="" class="btn btn -sm btn-primary"> Details</a>
-                    <a href="" class="btn btn -sm btn-danger"> Delete</a>
+                    <a asp-controller="Doktor" asp-action="Edit" asp-route-id="@item.DoktorId" btn-sm btn-primary"> Edit</a>
+                    <a asp-controller="Doktor" asp-action="Delete" asp-route-id="@item.DoktorId" class="btn btn-sm btn-danger"> Delete</a>
                 </td>
             </tr>
         }

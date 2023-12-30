@@ -43,6 +43,7 @@ app.MapControllerRoute(
     pattern: "tibbi-birimler",
     defaults: new { controller = "TibbiBirimler", action = "Index" });
 
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
