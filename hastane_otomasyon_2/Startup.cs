@@ -62,6 +62,13 @@ namespace hastane_otomasyon_2
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllerRoute(
+                        name: "doktorlar",
+                        pattern: "doktorlar",
+                        defaults: new { controller = "Doktorlar", action = "Index" });
+                });
             });
         }
     }

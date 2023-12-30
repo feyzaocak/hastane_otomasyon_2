@@ -7,20 +7,17 @@ using hastane_otomasyon_2.Data.Entity;
 using hastane_otomasyon_2.Data.efCore;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace hastane_otomasyon_2.Controllers
 {
-    public class DoktorContoroller : Controller
+    public class DoktorlarController : Controller
     {
         private readonly HastaneContext _context;
 
-
-        public DoktorContoroller(HastaneContext context)
+        public DoktorlarController(HastaneContext context)
         {
             _context = context;
         }
 
-       
         public async Task<IActionResult> Index()
         {
             var doktors = await _context.Doktors.ToListAsync();
@@ -33,23 +30,19 @@ namespace hastane_otomasyon_2.Controllers
         }
 
         [HttpPost]
-
         public async Task<IActionResult> Create(Doktor model)
         {
             _context.Doktors.Add(model);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
-
         }
 
         [HttpGet]
-
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
-
             }
             var doc = await _context.Doktors.FindAsync(id);
 
@@ -61,6 +54,7 @@ namespace hastane_otomasyon_2.Controllers
             return View(doc);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Edit(int id, Doktor model)
         {
             if (id != model.DoktorId)
@@ -85,10 +79,8 @@ namespace hastane_otomasyon_2.Controllers
                     {
                         throw;
                     }
-
                 }
                 return RedirectToAction("Index");
-
             }
 
             return View(model);
@@ -100,7 +92,6 @@ namespace hastane_otomasyon_2.Controllers
             if (id == null)
             {
                 return NotFound();
-
             }
             var doktor = await _context.Doktors.FindAsync(id);
 
@@ -126,4 +117,3 @@ namespace hastane_otomasyon_2.Controllers
         }
     }
 }
-
