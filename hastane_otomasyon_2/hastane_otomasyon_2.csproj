@@ -24,10 +24,12 @@
     <None Remove="Data\efCore\" />
     <None Remove="Views\Kullanici\" />
     <None Remove="Data\Entity\" />
+    <None Remove="Views\Randevu\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\efCore\" />
     <Folder Include="Views\Kullanici\" />
     <Folder Include="Data\Entity\" />
+    <Folder Include="Views\Randevu\" />
   </ItemGroup>
 </Project>
