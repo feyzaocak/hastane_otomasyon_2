@@ -1,4 +1,4 @@
-﻿@model List<hastane_otomasyon_2.Models.TibbiBirimModel>
+﻿@model Tuple<List<hastane_otomasyon_2.Models.TibbiBirimModel>, List<hastane_otomasyon_2.Models.TibbiBirimModel>, List<hastane_otomasyon_2.Models.TibbiBirimModel>, List<hastane_otomasyon_2.Models.TibbiBirimModel>>
 
 @{
     Layout = null;
@@ -10,10 +10,46 @@
     <title>Tıbbi Birimler</title>
 </head>
 <body>
-    <h2>Tıbbi Birimler</h2>
+    <h2>Cerrahi Tıp Birimleri</h2>
 
     <ul>
-        @foreach (var birim in Model)
+        @foreach (var birim in Model.Item1)
+        {
+            <li>
+                <strong>@birim.BirimAdi</strong><br />
+                @birim.Aciklama
+            </li>
+        }
+    </ul>
+
+    <h2>Dahili Tıp Birimleri</h2>
+
+    <ul>
+        @foreach (var birim in Model.Item2)
+        {
+            <li>
+                <strong>@birim.BirimAdi</strong><br />
+                @birim.Aciklama
+            </li>
+        }
+    </ul>
+
+    <h2>Diş Hekimliği</h2>
+
+    <ul>
+        @foreach (var birim in Model.Item3)
+        {
+            <li>
+                <strong>@birim.BirimAdi</strong><br />
+                @birim.Aciklama
+            </li>
+        }
+    </ul>
+
+    <h2>Laboratuvar</h2>
+
+    <ul>
+        @foreach (var birim in Model.Item4)
         {
             <li>
                 <strong>@birim.BirimAdi</strong><br />

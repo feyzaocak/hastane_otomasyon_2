@@ -41,7 +41,7 @@ namespace hastane_otomasyon_2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-              
+
             }
             else
             {
