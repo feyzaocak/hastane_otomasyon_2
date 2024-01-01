@@ -11,7 +11,7 @@ namespace hastane_otomasyon_2.Data.Entity
 
         public string? AlanAdı { get; set; }
 
-
+       
     }
 }
 

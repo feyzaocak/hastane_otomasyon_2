@@ -18,6 +18,7 @@ namespace hastane_otomasyon_2.Data.Entity
         public string? KullaniciTelefon { get; set; }
 
 
+
     }
 }
 

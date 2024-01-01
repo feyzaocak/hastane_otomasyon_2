@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hastane_otomasyon_2.Data.efCore;
 
@@ -10,9 +11,10 @@ using hastane_otomasyon_2.Data.efCore;
 namespace hastane_otomasyon_2.Migrations
 {
     [DbContext(typeof(HastaneContext))]
-    partial class HastaneContextModelSnapshot : ModelSnapshot
+    [Migration("20240101011018_EkleAlanAdi")]
+    partial class EkleAlanAdi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.25");
@@ -28,7 +30,7 @@ namespace hastane_otomasyon_2.Migrations
 
                     b.HasKey("AlanId");
 
-                    b.ToTable("Alans", (string)null);
+                    b.ToTable("Alans");
                 });
 
             modelBuilder.Entity("hastane_otomasyon_2.Data.Entity.Doktor", b =>
@@ -48,7 +50,7 @@ namespace hastane_otomasyon_2.Migrations
 
                     b.HasKey("DoktorId");
 
-                    b.ToTable("Doktors", (string)null);
+                    b.ToTable("Doktors");
                 });
 
             modelBuilder.Entity("hastane_otomasyon_2.Data.Entity.Kullanici", b =>
@@ -71,7 +73,7 @@ namespace hastane_otomasyon_2.Migrations
 
                     b.HasKey("KullaniciId");
 
-                    b.ToTable("Kullanicis", (string)null);
+                    b.ToTable("Kullanicis");
                 });
 
             modelBuilder.Entity("hastane_otomasyon_2.Data.Entity.Randevu", b =>
@@ -105,7 +107,7 @@ namespace hastane_otomasyon_2.Migrations
 
                     b.HasKey("RandevuId");
 
-                    b.ToTable("Randevus", (string)null);
+                    b.ToTable("Randevus");
                 });
 #pragma warning restore 612, 618
         }

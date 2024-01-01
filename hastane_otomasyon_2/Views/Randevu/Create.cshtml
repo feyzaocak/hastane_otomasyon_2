@@ -1,0 +1,28 @@
+﻿@model Randevu
+
+
+<h2>Randevu Al</h2>
+<hr>
+<form asp-controller="Randevu" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="AlanId" class="form-label"> Polikinlik:</label>
+        <select asp-for="AlanId" asp-items=" ViewBag.Alans" class="form-control">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DoktorId" class="form-label"> Doktor:</label>
+        <select asp-for="DoktorId" asp-items=" ViewBag.Doktors" class="form-control">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="RandevuTarihi" class="form-label"> Tarih:</label>
+        <select asp-for="RandevuTarihi" asp-items=" ViewBag.Randevus" class="form-control">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <button type="submit" class=" btn btn-primary">Kaydet</button>
+  
+
+</form>

@@ -15,10 +15,15 @@ namespace hastane_otomasyon_2.Data.Entity
 
         public int AlanId { get; set; }
 
+        public string? AlanAdı {get; set;}
+
         public int  DoktorId { get; set; }
+
+        public string? DoktorAdi { get; set; }
 
         public DateTime RandevuTarihi { get; set; }
 
+       
     }
 }
 
