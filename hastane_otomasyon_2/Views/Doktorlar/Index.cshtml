@@ -8,6 +8,7 @@
             <th style="width: 150px;">@Html.DisplayNameFor(m => m.DoktorId)</th>
             <th>@Html.DisplayNameFor(m => m.DoktorAdi)</th>
             <th>@Html.DisplayNameFor(m => m.DoktorSoyadi)</th>
+         
             <th></th>
         </tr>
     </thead>
@@ -18,10 +19,9 @@
                 <td>@Html.DisplayFor(modelItem => item.DoktorId)</td>
                 <td>@Html.DisplayFor(modelItem => item.DoktorAdi)</td>
                 <td>@Html.DisplayFor(modelItem => item.DoktorSoyadi)</td>
+
                 <td>
-                    <a asp-controller="Doktor" asp-action="Edit" asp-route-id="@item.DoktorId" btn-sm btn-primary"> Edit</a>
-                    <a asp-controller="Doktor" asp-action="Delete" asp-route-id="@item.DoktorId" class="btn btn-sm btn-danger"> Delete</a>
-                </td>
+               
             </tr>
         }
     </tbody>

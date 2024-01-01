@@ -17,7 +17,7 @@ namespace hastane_otomasyon_2.Data.Entity
 
         public string? KullaniciTelefon { get; set; }
 
-
+        public ICollection<Randevu> Randevus { get; set; } = new List<Randevu>();
 
     }
 }

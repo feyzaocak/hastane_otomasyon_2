@@ -2,11 +2,13 @@
 using hastane_otomasyon_2.Data.Entity;
 using Microsoft.Extensions.Hosting;
 using System.Reflection.Metadata;
+using System;
 
 namespace hastane_otomasyon_2.Data.efCore
 {
     public class HastaneContext : DbContext
     {
+ 
         public HastaneContext(DbContextOptions<HastaneContext>options): base (options)
         {
 

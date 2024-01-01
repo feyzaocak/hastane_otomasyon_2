@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hastane_otomasyon_2.Data.efCore;
 
@@ -10,9 +11,10 @@ using hastane_otomasyon_2.Data.efCore;
 namespace hastane_otomasyon_2.Migrations
 {
     [DbContext(typeof(HastaneContext))]
-    partial class HastaneContextModelSnapshot : ModelSnapshot
+    [Migration("20240101190900_AddDoktorId")]
+    partial class AddDoktorId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.25");
@@ -41,7 +43,6 @@ namespace hastane_otomasyon_2.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("AlanId")
-                        .IsRequired()
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("DoktorAdi")
@@ -50,9 +51,12 @@ namespace hastane_otomasyon_2.Migrations
                     b.Property<string>("DoktorSoyadi")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("UzmanlikId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("DoktorId");
 
-                    b.HasIndex("AlanId");
+                    b.HasIndex("UzmanlikId");
 
                     b.ToTable("Doktors");
                 });
@@ -116,7 +120,7 @@ namespace hastane_otomasyon_2.Migrations
                 {
                     b.HasOne("hastane_otomasyon_2.Data.Entity.Alan", "Alan")
                         .WithMany("Doktors")
-                        .HasForeignKey("AlanId")
+                        .HasForeignKey("UzmanlikId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -130,7 +134,7 @@ namespace hastane_otomasyon_2.Migrations
                         .HasForeignKey("AlanId");
 
                     b.HasOne("hastane_otomasyon_2.Data.Entity.Doktor", "Doktor")
-                        .WithMany()
+                        .WithMany("Randevus")
                         .HasForeignKey("DoktorId");
 
                     b.HasOne("hastane_otomasyon_2.Data.Entity.Kullanici", "Kullanici")
@@ -148,6 +152,11 @@ namespace hastane_otomasyon_2.Migrations
                 {
                     b.Navigation("Doktors");
 
+                    b.Navigation("Randevus");
+                });
+
+            modelBuilder.Entity("hastane_otomasyon_2.Data.Entity.Doktor", b =>
+                {
                     b.Navigation("Randevus");
                 });
 

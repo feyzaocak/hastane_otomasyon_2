@@ -3,7 +3,7 @@
 
 <h2>Doktor Ekle</h2>
 <hr>
-<form asp-controller="Doktor" asp-action="Create" method="post">
+<form asp-controller="Doktorlar" asp-action="Create" method="post">
     <div class="mb-3">
         <label asp-for="DoktorId" class="form-label"> Id:</label>
         <input asp-for="DoktorId" class="form-control">
@@ -15,6 +15,13 @@
     <div class="mb-3">
         <label asp-for="DoktorSoyadi" class="form-label"> Soyadi:</label>
         <input asp-for="DoktorSoyadi" class="form-control">
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="AlanId" class="form-label"> AlanID:</label>
+        <input asp-for="AlanId" class="form-control">
+
+    </div>
     <button type="submit" class=" btn btn-primary">Kaydet</button>
 
 

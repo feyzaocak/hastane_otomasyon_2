@@ -3,7 +3,7 @@
 
 <h2>Doktor Güncelleme</h2>
 <hr>
-<form asp-controller="Doktor" asp-action="Edit" method="post">
+<form asp-controller="Doktorlar" asp-action="Edit" method="post">
     <input type="hidden" asp-for="DoktorId">
 
     <div class="mb-3">
@@ -14,7 +14,7 @@
         <label asp-for="DoktorSoyadi" class="form-label">Soyadi:</label>
         <input asp-for="DoktorSoyadi" class="form-control">
     </div>
-   
+
     <button type="submit" class=" btn btn-primary">Kaydet</button>
 
 

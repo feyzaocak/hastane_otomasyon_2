@@ -38,18 +38,21 @@ namespace  hastane_otomasyon_2.Controllers
 
             return View();
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
 
         public async Task<IActionResult> Create(Randevu model)
         {
-       
+            
             _context.Randevus.Add(model);
             await _context.SaveChangesAsync();
-
             return RedirectToAction("Index");
 
         }
+
+
 
     }
 }
