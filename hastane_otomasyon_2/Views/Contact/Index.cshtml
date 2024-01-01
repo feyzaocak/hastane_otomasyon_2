@@ -1,20 +1,30 @@
 ﻿<!-- Views/Contact/Index.cshtml -->
 @model ContactFormModel
 
-<h2>İletişim</h2>
+<h2 class="mb-4">İletişim</h2>
 
 <form asp-controller="Contact" asp-action="Index" method="post">
-    <label for="Name">Adınız:</label>
-    <input type="text" id="Name" name="Name" required />
+    <div class="form-group">
+        <label for="Name">Adınız:</label>
+        <input type="text" class="form-control" id="Name" name="Name" required />
+    </div>
 
-    <label for="Email">E-posta Adresiniz:</label>
-    <input type="email" id="Email" name="Email" required />
+    <div class="form-group">
+        <label for="Email">E-posta Adresiniz:</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
 
-    <label for="Subject">Konu:</label>
-    <input type="text" id="Subject" name="Subject" required />
+    <div class="form-group">
+        <label for="Subject">Konu:</label>
+        <input type="text" class="form-control" id="Subject" name="Subject" required />
+    </div>
 
-    <label for="Message">Mesajınız:</label>
-    <textarea id="Message" name="Message" rows="4" required></textarea>
+    <div class="form-group">
+        <label for="Message">Mesajınız:</label>
+        <textarea class="form-control" id="Message" name="Message" rows="4" required></textarea>
+    </div>
 
-    <button type="submit">Gönder</button>
+    <button type="submit" class="btn btn-primary">Gönder</button>
 </form>
+
+<img src="~/images/contact.jpg"  width="1000px" height="20px"alt="İletişim Resmi" class="img-fluid">

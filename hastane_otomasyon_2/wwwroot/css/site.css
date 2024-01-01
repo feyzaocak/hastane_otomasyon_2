@@ -26,3 +26,14 @@ nav {
         font-size: 18px;
         margin-right: 15px; 
     }
+/* wwwroot/css/contact.css */
+
+h2 {
+    color: #007bff; /* Bootstrap'un varsayýlan mavi rengi */
+}
+
+form {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Forma hafif bir gölge ekleyin */
+    padding: 20px;
+    border-radius: 10px; /* Formun kenarlarýna yumuþak bir kenarlýk ekleyin */
+}

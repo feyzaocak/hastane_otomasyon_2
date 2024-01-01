@@ -24,7 +24,7 @@ namespace hastane_otomasyon_2.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(Person personModel)
         {
-            if (personModel.Email == "deneme@gmail.com" && personModel.Password == "1234-")
+            if (personModel.Email == "G201210028@sakarya.edu.tr" && personModel.Password == "sau")
             {
                 List<Claim> claims = new List<Claim>
                 {
